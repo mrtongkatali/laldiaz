@@ -138,5 +138,5 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
 
-STATIC_ROOT = '/media/leod/WORKSPACE/crazyapp/laldiaz/static/'
+STATIC_ROOT = '/media/leod/WORKSPACE/crazyapp/laldiaz/public/'
 STATIC_URL = '/static/'
