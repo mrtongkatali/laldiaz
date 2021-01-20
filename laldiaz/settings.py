@@ -31,7 +31,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = env.bool('SECURE_SSL_REDIRECT', default=False)
 
 # Application definition
 
