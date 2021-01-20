@@ -11,28 +11,30 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+root = environ.Path(__file__) - 3  # get root of the project
+env = environ.Env()
+environ.Env.read_env()  # reading .env file
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'lb1o*$2!!*+v$m19mc3vk0-=!uy4y1#zsqu#%9(527)*d#**b#'
+SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+DEBUG = env.bool('DEBUG', default=False)
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 # Application definition
 
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
+    #'polls.apps.PollsConfig',
     'landing_v1.apps.LandingV1Config',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/media/leod/WORKSPACE/crazyapp/cnf/laldiaz.cnf'
+            'read_default_file': env.str("MYSQL_DEFAULT_FILE")
         }
     }
 }
@@ -137,5 +139,5 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
 
-STATIC_ROOT = '/media/leod/WORKSPACE/crazyapp/laldiaz/public/'
+STATIC_ROOT = env.str("STATIC_ROOT")
 STATIC_URL = '/static/'
