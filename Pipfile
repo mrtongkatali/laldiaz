@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 mysqlclient = "*"
 gunicorn = "*"
+django-environ = "*"
 
 [requires]
 python_version = "3.6"
