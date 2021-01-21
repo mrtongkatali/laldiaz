@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 def index(request):
     urls = {
-        "cv": "https://s3-ap-southeast-1.amazonaws.com/laldiaz.me/LeoDiaz-Resume-2021-v1.pdf",
+        "cv": "https://s3-ap-southeast-1.amazonaws.com/laldiaz.me/LeoDiaz-Resume-2021-v2.pdf",
         "gitlab": "https://gitlab.com/mrtongkatali",
         "linkedin": "https://www.linkedin.com/in/mrtongkatali/",
         "github": "https://github.com/mrtongkatali",
