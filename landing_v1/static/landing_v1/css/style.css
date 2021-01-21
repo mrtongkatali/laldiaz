@@ -225,7 +225,6 @@ a:hover {
 }
 .tech-list img {
   width: 18px;
-  margin-bottom:3px;
 }
 .tech-list.portfolio {
   font-size: 12px;
@@ -301,6 +300,54 @@ ul.timeline a {
 }
 .portfolio-title h5 {
   margin-bottom: 0;
+}
+
+/* -- RESPONSIVE DESIGN -- */
+@media screen and (max-width: 576px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .section-header {
+    justify-content: center;
+  }
+  .section-header .section-header-content {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .section-content-wrapper .section-content {
+    padding-right: 60px;
+  }
+
+  .soc-media {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section-content-wrapper.hero {
+    height: unset;
+  }
+  .section-content-wrapper.hero .section-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .section-content-wrapper.hero .mobile-btn {
+    margin-top: 50px;
+  }
+  .section-content-wrapper .section-content {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+  }
+
+  .soc-media {
+    margin-top: 20px;
+  }
+
+  .mobile-btn {
+    display: block !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
