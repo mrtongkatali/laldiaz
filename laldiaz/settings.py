@@ -36,7 +36,6 @@ SECURE_SSL_REDIRECT = env.bool('SECURE_SSL_REDIRECT', default=False)
 # Application definition
 
 INSTALLED_APPS = [
-    #'polls.apps.PollsConfig',
     'landing_v1.apps.LandingV1Config',
     'django.contrib.admin',
     'django.contrib.auth',
